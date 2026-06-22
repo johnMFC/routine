@@ -10,45 +10,8 @@
   <title>Daily Routine</title>
 </head>
 <body>
+ <div id="containerSemana"></div>
 
-  <h1>Minha Semana</h1>
-
-  <div class="dia">
-    <h2>Segunda-feira</h2>
-    <ul>
-      <li>
-        <input type="checkbox" onchange="riscar(this)"> Revisar metas da semana
-      </li>
-      <li>
-        <input type="checkbox" onchange="riscar(this)"> Exercício físico
-      </li>
-    </ul>
-  </div>
-
-  <div class="dia">
-    <h2>Terça-feira</h2>
-    <ul>
-      <li>
-        <input type="checkbox" onchange="riscar(this)"> Reunião principal
-      </li>
-      <li>
-        <input type="checkbox" onchange="riscar(this)"> Culto da terça
-      </li>
-    </ul>
-  </div>
-
-  <script>
-
-    function riscar(checkbox) {
-      let tarefa = checkbox.parentElement;
-      if (checkbox.checked) {
-        tarefa.classList.add("concluida");
-      } else {
-        tarefa.classList.remove("concluida");
-      }
-    }
-
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
