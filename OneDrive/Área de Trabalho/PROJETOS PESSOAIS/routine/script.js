@@ -61,9 +61,9 @@ function renderizar() {
     });
 
     const btnAdicionar = document.createElement("button");
-    btnAdicionar.textContent = "Adicionar Tarefa";
+    btnAdicionar.textContent = "+ Adicionar Tarefa";
     btnAdicionar.onclick = function() {
-      const textoTarefa = prompt("Digite a nova tarefa:");
+      adicionarTarefa(indiceDia);
 
     };
 
@@ -76,6 +76,17 @@ function renderizar() {
   });
 }
 
+function adicionarTarefa(indiceDia){
+  const texto = prompt("Digite uma nova tarefa:");
+  if(texto && texto.trim() !== ""){
+    dias[indiceDia].tarefas.push({ 
+    texto: texto.trim(), 
+    feita: false
+   });
+    renderizar();
+  }
+}
+
 function marcarTarefa(indiceDia, indiceTarefa) {
   const tarefa = dias[indiceDia].tarefas[indiceTarefa];
   tarefa.feita = !tarefa.feita;
@@ -83,13 +94,8 @@ function marcarTarefa(indiceDia, indiceTarefa) {
 }
 
 function apagarTarefa(indiceDia, indiceTarefa) {
-  const texto = prompt("Digite uma nova tarefa:");
-  if(texto && texto.trim() !==""){
-    dias[indiceDia].tarefas.push({
-      texto: texto.trim(),
-      feita: false
-    });
-  }
+
+  dias[indiceDia].tarefas.splice(indiceTarefa, 1)
   renderizar();
 }
   renderizar();
