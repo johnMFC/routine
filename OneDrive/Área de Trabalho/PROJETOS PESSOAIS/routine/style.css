@@ -1,23 +1,143 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --cor-fundo: #1a1a1a;
+  --cor-card: #2a2a2a;
+  --cor-laranja: #ff6b00;
+  --cor-laranja-escuro: #cc5500;
+  --cor-texto: #f0f0f0;
+  --cor-texto-fraco: #888;
+  --cor-borda: #3a3a3a;
+}
+
+/* ===== GERAL ===== */
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Bitcount Single", system-ui;
 }
 
-
-.dia {
-  background-color: white;
-  padding: 16px;
-  margin-bottom: 16px;
-  border-radius: 10px;
+body{
+  background-color: var(--cor-fundo);
+  font-family: 'Poppins', sans-serif;
+  color: var(--cor-texto);
+  padding: 30px 20px;
 }
 
-.dia h2 {
-  margin-top: 0;
-  color: #3C3489;
+h1{
+  text-align:center;
+  font-size: 2.5rem;
+  color: var(--cor-laranja);
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
+/* ===== CONTAINER GERAL ======*/
 
+#containerSemana{
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
+.dia{
+  background-color: var(--cor-card);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dia h2{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-laranja);  
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+li{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 14px;
+}
+ 
+li span{
+  flex-grow: 1;
+  color: var(--cor-texto);
+}
+
+/*tarefa concluída*/
+
+.concluida span{
+  text-decoration: none;
+  color: var(--cor-texto-fraco);
+}
+
+/* ==== TAREFA CONCLUIDA =====*/
+
+.concluida span{
+  text-decoration: line-through;
+  color: var(--cor-texto-fraco);
+}
+
+/*===== CHECKBOX =====*/
+
+input[type="checkbox"]{
+  accent-color: var(--cor-laranja);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/*===== Botão apagar===*/
+
+.btn-apagar{
+  background:none;
+  border:none;
+  color: var(--cor-texto-fraco);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px; 
+  border-radius:4px;
+  transition: color 0.3s;
+}
+
+.btn-apagar:hover{
+  color: #ff4444;
+}
+/*==== Button adicionar tarefa ====*/
+
+.btn-adicionar{
+ background-color: var(--cor-laranja);
+ border:none;
+ color: white;
+ padding: 8px 14px;
+ border-radius: 6px;
+ cursor: pointer;
+ font-size: 13px;
+ font-family: 'Poppins', sans-serif;
+ transition: background 0.2s;
+ width: 100%;
+ border: none;
+}
+
+.btn-adicionar:hover{
+  background-color: var(--cor-laranja-escuro);
+  color: white;
+  transform: scale(1.02);
+  transition: 1s;
+}
 
