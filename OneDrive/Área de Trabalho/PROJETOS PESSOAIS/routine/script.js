@@ -40,6 +40,7 @@ function renderizar() {
       checkbox.type = "checkbox";
       checkbox.checked = tarefa.feita;
       
+
       checkbox.onchange = function() {
         marcarTarefa(indiceDia, indiceTarefa);
       };
@@ -48,7 +49,8 @@ function renderizar() {
       texto.textContent = tarefa.texto;
 
       const btnApagar = document.createElement("button");
-      btnApagar.textContent = "X";
+      btnApagar.classList.add("btn-apagar");
+      btnApagar.innerHTML = '<i class="bi bi-x-square"></i>';
       btnApagar.onclick = function() {
         apagarTarefa(indiceDia, indiceTarefa); // ✅ Agora funciona!
       };
@@ -61,6 +63,7 @@ function renderizar() {
     });
 
     const btnAdicionar = document.createElement("button");
+    btnAdicionar.classList.add("btn-adicionar");  
     btnAdicionar.textContent = "+ Adicionar Tarefa";
     btnAdicionar.onclick = function() {
       adicionarTarefa(indiceDia);
